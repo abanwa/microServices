@@ -2,16 +2,16 @@ version: "3.8"
 
 services:
   api-gateway:
-  build: ./api-gateway
-  ports:
-    - "3000:3000"
-  env_file: ./api-gateway/.env
-  depends_on:
-    - redis
-    - rabbitmq
-  environment:
-    - REDIS_URL=redis://redis:6379
-    - RABBITMQ_URL=amqp://rabbitmq:5672
+    build: ./api-gateway
+    ports:
+      - "3000:3000"
+    env_file: ./api-gateway/.env
+    depends_on:
+      - redis
+      - rabbitmq
+    environment:
+      - REDIS_URL=redis://redis:6379
+      - RABBITMQ_URL=amqp://rabbitmq:5672
 
   identity-service:
     build: ./identity-service
